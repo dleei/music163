@@ -16,9 +16,6 @@ export const RecommendWrapper = styled.div`
     }
   }
   .download {
-    background: #000;
-    backdrop-filter: blur(10px);
-
     .tips {
       font-size: 10px;
       color: #8d8d8d;
@@ -31,4 +28,9 @@ export const RecommendWrapper = styled.div`
 
 export const Left = styled.div``;
 
-export const Right = styled.div``;
+export const Right = styled.div`
+  width: 250px;
+  border-left: 2px solid #e9e9e9;
+  border-right: 2px solid #e9e9e9;
+`;
+` `;
