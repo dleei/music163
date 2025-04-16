@@ -1,9 +1,9 @@
-import { TIME_OUT, BASE_URL } from '../config';
-import Request from '../service';
+import { TIME_OUT, BASE_URL } from "../config";
+import Request from "../service";
 
 /**
  * axios 请求封装
- * @author dailei.mail@qq.com
+ * @author dleei
  * @param {Object} config 请求配置
  * @returns {Promise}
  * @example
@@ -20,13 +20,13 @@ const server = new Request({
       return config;
     },
     onReqReject: (error) => {
-      return error;
+      return console.error(error);
     },
     onResResolve: (res) => {
       return res.data;
     },
     onResReject: (error) => {
-      return error;
+      return console.error(error);
     },
   },
 });

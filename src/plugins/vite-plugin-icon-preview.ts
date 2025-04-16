@@ -17,6 +17,8 @@ interface Options {
 /**
  * 生成图标预览插件
  * @param options 配置选项
+ * @param options.entry 图标预览路径
+ * @param options.iconDirs 图标目录
  * @returns 插件对象
  */
 export default function (options: Options) {

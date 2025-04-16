@@ -16,17 +16,19 @@ export const RecommendWrapper = styled.div`
     }
   }
   .download {
-    background: rgba(0, 0, 0, 0.6);
+    background: #000;
     backdrop-filter: blur(10px);
 
     .tips {
       font-size: 10px;
-      text-align: center;
       color: #8d8d8d;
+      position: absolute;
+      bottom: 12px;
+      left: 13%;
     }
   }
 `;
 
-export const Left = styled.div``
+export const Left = styled.div``;
 
-export const Right = styled.div``
+export const Right = styled.div``;

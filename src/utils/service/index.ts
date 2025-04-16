@@ -30,7 +30,7 @@ class Request {
     // 全局响应拦截器，保证最后执行
     this.instance.interceptors.response.use(
       (res) => {
-        return res.data;
+        return res;
       },
       (err) => {
         return err;

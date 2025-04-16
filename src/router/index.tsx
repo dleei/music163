@@ -5,19 +5,19 @@ import { Navigate } from 'react-router-dom'
 const Layout = React.lazy(() => import("@/layout"));
 const NotFount = React.lazy(() => import("@/views/404"));
 const Login = React.lazy(() => import("@/views/Login"));
-const Album = React.lazy(() => import("@/views/Album"));
-const AnchorDj = React.lazy(() => import("@/views/AnchorDj"));
-const CloudDiscover = React.lazy(() => import("@/views/CloudDiscover"));
+const Album = React.lazy(() => import("@/views/Discover/c-views/Album"));
+const AnchorDj = React.lazy(() => import("@/views/Discover/c-views/AnchorDj"));
+const CloudDiscover = React.lazy(() => import("@/views/Cloud"));
 const Discover = React.lazy(() => import("@/views/Discover"));
 const Download = React.lazy(() => import("@/views/Download"));
 const Focus = React.lazy(() => import("@/views/Focus"));
 const Mall = React.lazy(() => import("@/views/Mall"));
 const Mine = React.lazy(() => import("@/views/Mine"));
 const Musician = React.lazy(() => import("@/views/Musician"));
-const RankingList = React.lazy(() => import("@/views/RankingList"));
-const Recommend = React.lazy(() => import("@/views/Recommend"));
-const Singer = React.lazy(() => import("@/views/Singer"));
-const SongsOrder = React.lazy(() => import("@/views/SongsOrder"));
+const RankingList = React.lazy(() => import("@/views/Discover/c-views/Ranking"));
+const Recommend = React.lazy(() => import("@/views/Discover/c-views/Recommend"));
+const Singer = React.lazy(() => import("@/views/Discover/c-views/Singer"));
+const SongsOrder = React.lazy(() => import("@/views/Discover/c-views/Songs"));
 
 const routes: RouteObject[] = [
   {
@@ -82,7 +82,7 @@ const routes: RouteObject[] = [
         element: <Musician />,
       },
       {
-        path: "cloudDiscover",
+        path: "cloud",
         element: <CloudDiscover />,
       },
       {

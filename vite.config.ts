@@ -14,7 +14,10 @@ const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
 // https://vite.dev/config/
 export default ({ mode }: { mode: string }) => {
-  const { VITE_BASE_URL_DEV } = loadEnv(mode, resolve(__dirname));
+  // 指定环境变量文件所在目录
+  const envDir = resolve(__dirname, 'env'); 
+  
+  const { VITE_BASE_URL_DEV, VITE_DEV_PREFIX } = loadEnv(mode, envDir);
 
   return defineConfig({
     // 生产环境打包路径
@@ -67,10 +70,10 @@ export default ({ mode }: { mode: string }) => {
     server: {
       // 代理转发
       proxy: {
-        "/api": {
-          target: VITE_BASE_URL_DEV, // 服务器请求地址
-          changeOrigin: true, // 是否允许跨域
-          rewrite: (path) => path.replace(/^\/api/, ""), // 请求地址重写, 请求地址前缀 /api 替换为空
+        [VITE_DEV_PREFIX]: {
+          target: VITE_BASE_URL_DEV,
+          changeOrigin: true,
+          rewrite: (path) => path.replace(new RegExp(`^${VITE_DEV_PREFIX}`), ""),
         },
       },
       open: true, // 自动打开浏览器
@@ -97,8 +100,8 @@ export default ({ mode }: { mode: string }) => {
         output: {
           entryFileNames: "assets/[name].js",
           chunkFileNames: "assets/[name].js",
-          assetFileNames: "assets/[name].[ext]",
-          assetFileName({ name }: { name: any }) {
+          // assetFileNames: "assets/[name].[ext]",
+          assetFileNames({ name }: { name: any }) {
             const info = name.split(".");
             let ext = info[info.length - 1];
             if (/\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/i.test(name)) {

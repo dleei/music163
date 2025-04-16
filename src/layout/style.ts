@@ -4,6 +4,9 @@ const LayoutWrapper = styled.div`
   .layout-container {
     .header {
       background: #242424;
+      font-size: 14px;
+      color: #fff;
+      height: 75px;
     }
     .nav {
       color: #fff;
