@@ -1,0 +1,9 @@
+:root {
+  .common-width {
+    width: 1100px;
+    margin: 0 auto;
+  }
+
+  --shadow-black: #242424;
+  --hover-black: #000000;
+}
