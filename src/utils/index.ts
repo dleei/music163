@@ -1,4 +1,5 @@
 import request from "./modules/request";
-import {localCache, sessionCache} from "./modules/cache";
+import format from "./modules/format";
+import { localCache, sessionCache } from "./modules/cache";
 
-export { request, localCache, sessionCache };
+export { request, localCache, sessionCache, format };

@@ -5,6 +5,7 @@ export const TitleWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   position: relative;
+  margin-top: 15px;
   &::after {
     content: "";
     position: absolute;

@@ -8,7 +8,7 @@ import {
   transformerCompileClass,
   transformerDirectives,
   transformerVariantGroup,
-} from 'unocss'
+} from "unocss";
 /* import { entriesToCss, toArray } from '@unocss/core'
 import { darkTheme, lightTheme } from './themes' */
 
@@ -19,14 +19,16 @@ export default defineConfig({
   // 自定义简写以提供自动补齐建议。 如果 values 是一个数组，它将与 | 连接并用 () 封装。
   shortcuts: [
     {
-      'flex-center': 'flex justify-center items-center',
-      'flex-col': 'flex flex-col',
-      'flex-col-center': 'flex flex-col justify-center items-center',
-      'm-center': 'my-0 mx-auto'
+      "flex-center": "flex justify-center items-center",
+      "flex-col": "flex flex-col",
+      "flex-col-center": "flex flex-col justify-center items-center",
+      "m-center": "my-0 mx-auto",
+      ellipsis: "overflow-hidden whitespace-nowrap text-ellipsis",
+      "ellipsis-2": "overflow-hidden line-clamp-2"
     },
   ],
   // 原始 CSS 注入。
-/*   preflights: [
+  /*   preflights: [
     {
       getCSS: () => {
         const returnCss= []
@@ -48,8 +50,8 @@ export default defineConfig({
   ], */
   theme: {
     colors: {
-      'ui-primary': 'rgb(var(--ui-primary))',
-      'ui-text': 'rgb(var(--ui-text))',
+      "ui-primary": "rgb(var(--ui-primary))",
+      "ui-text": "rgb(var(--ui-text))",
     },
   },
   presets: [
@@ -57,12 +59,16 @@ export default defineConfig({
     presetAttributify(),
     presetIcons({
       extraProperties: {
-        display: 'inline-block',
-        'vertical-align': 'middle',
+        display: "inline-block",
+        "vertical-align": "middle",
       },
     }),
     presetTypography(),
   ],
-  transformers: [transformerDirectives(), transformerVariantGroup(), transformerCompileClass()],
-  configDeps: ['themes/index.ts'],
-})
+  transformers: [
+    transformerDirectives(),
+    transformerVariantGroup(),
+    transformerCompileClass(),
+  ],
+  configDeps: ["themes/index.ts"],
+});

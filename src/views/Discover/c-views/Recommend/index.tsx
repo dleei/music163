@@ -4,9 +4,18 @@ import { RecommendWrapper, Left, Right } from "./style";
 import { Carousel } from "@arco-design/web-react";
 
 import { getBanner } from "@/apis/modules/banner";
-import { getHotList } from "@/apis/modules/songs";
-import type { Banner } from "@/types";
+import {
+  getHotList,
+  getRecommendList,
+  getNewAlbum,
+  getTopList,
+} from "@/apis/modules/songs";
+import type { Banner, CardType, AlbumDataType } from "@/types";
 import Title from "./components/Title";
+import Card from "./components/Card";
+import AlbumCard from "./components/AlbumCard";
+import TopTable from "./components/TopData";
+// import Icon from "@/components/Icon";
 
 interface IProps {
   children?: ReactNode;
@@ -15,6 +24,9 @@ interface IProps {
 const Recommend: FC<IProps> = () => {
   const [banners, setBanners] = useState<Banner[]>([]);
   const [subTitle, setSubTile] = useState([]);
+  const [cardsInfo, setCardsInfo] = useState<CardType[]>([]);
+  const [albums, setAlbums] = useState<AlbumDataType[]>([]);
+  const [topList, setTopList] = useState([]);
 
   useEffect(() => {
     getBanner().then(({ banners }) => {
@@ -22,10 +34,29 @@ const Recommend: FC<IProps> = () => {
     });
 
     getHotList().then(({ tags }) => {
-      // debugger
       setSubTile(tags);
     });
-  }, [banners, subTitle]);
+
+    getRecommendList().then(({ result }) => {
+      setCardsInfo(result); // 这里返回的是对象数组为什么下面的类型错误
+    });
+
+    getNewAlbum({
+      area: "ALL",
+      type: "hot",
+    }).then(({ weekData }) => {
+      // console.log(weekData);
+
+      setAlbums(weekData);
+
+      // debugger;
+    });
+
+    getTopList().then(({ list }) => {
+      // console.log(list);
+      setTopList(list.slice(0,3));
+    });
+  }, []);
 
   return (
     <RecommendWrapper>
@@ -62,9 +93,36 @@ const Recommend: FC<IProps> = () => {
         </div>
       </div>
       <div className="common-width flex justify-between">
-        <Left className="flex-1 px-5 py-5">
-          <Title title="热门推荐" subTitle={subTitle} />
+        {/* 左侧区域 */}
+        <Left className="flex-1 py-5">
+          <div className="px-5">
+            {/* 热门推荐 */}
+            <Title title="热门推荐" subTitle={subTitle} />
+            <div className="flex justify-around mt-6 flex-wrap gap-5">
+              {cardsInfo.slice(0, 10).map((card: CardType) => (
+                <Card key={card.id} info={card}></Card>
+              ))}
+            </div>
+            {/* 新碟上架 */}
+            <Title title="新碟上架" />
+            <div className="my-6">
+              <div className="h-[185px] w-full flex gap-2  bg-#f5f5f5 border-solid border-#d3d3d3 border-width-[0.5px] py-4 box-border">
+                <div className="scroll-box m-auto flex gap-3 w-[680px] overflow-hidden">
+                  {/* <Icon name="left"></Icon> */}
+                  {albums.slice(0, 10).map((item, index) => (
+                    <AlbumCard key={index} albums={item}></AlbumCard>
+                  ))}
+                  {/* <Icon name="right"></Icon> */}
+                </div>
+              </div>
+            </div>
+
+            {/* 榜单 */}
+            <Title title="榜单" />
+            <TopTable columns={topList}></TopTable>
+          </div>
         </Left>
+        {/* 右侧区域 */}
         <Right>
           <div className="w-[250px]">
             <div className="bg-gradient-to-t from-#e1e1e1 to-#fff pb-4">
