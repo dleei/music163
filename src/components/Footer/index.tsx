@@ -8,9 +8,13 @@ interface IProps {
 }
 
 const Footer: FC<IProps> = () => {
-  return <FooterWrapper>
-    <div className='footer m-center common-width'>footer</div>
-  </FooterWrapper>;
+  return (
+    <FooterWrapper>
+      <div className="footer h-[325px] bg-[#f2f2f2]">
+        <div className="content m-center common-width">footer</div>
+      </div>
+    </FooterWrapper>
+  );
 };
 
 export default memo(Footer);

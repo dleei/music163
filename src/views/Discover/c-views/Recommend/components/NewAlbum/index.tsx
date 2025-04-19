@@ -49,7 +49,7 @@ const NewAlbum: FC<IProps> = () => {
                     return (
                       <div className="w-[100px]" key={album.id}>
                         <img
-                          className=" h-[100px] object-cover rounded"
+                          className=" h-[100px] object-cover rounded cursor-pointer"
                           src={album.picUrl}
                           alt={album.name}
                         />

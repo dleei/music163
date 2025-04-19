@@ -15,9 +15,11 @@ const Discover: FC<IProps> = () => {
       <div className="nav">
         <Nav></Nav>
       </div>
-      <Suspense fallback="">
-        <Outlet></Outlet>
-      </Suspense>
+      <div className="bg-[#f2f2f2]">
+        <Suspense fallback="">
+          <Outlet></Outlet>
+        </Suspense>
+      </div>
     </DiscoverWrapper>
   );
 };

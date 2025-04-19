@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import { Suspense } from "react";
 
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import LayoutWrapper from "./style";
 
 const Layout = () => {
@@ -16,6 +17,7 @@ const Layout = () => {
             <Outlet />
           </Suspense>
         </main>
+        <Footer></Footer>
       </div>
     </LayoutWrapper>
   );
