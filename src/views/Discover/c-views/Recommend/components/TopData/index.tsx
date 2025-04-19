@@ -28,7 +28,7 @@ const TopTable: FC<IProps> = ({ columns }) => {
           {column.tracks.map((track, index) => (
             <dd
               key={index}
-              className="ml-0 px-0 flex items-center p-2 hover:bg-#f5f5f5 rounded"
+              className="ml-0 px-0 flex items-center p-2 hover:bg-#f5f5f5 rounded cursor-pointer"
             >
               <div className="w-8 text-center text-#666">{index + 1}</div>
               <div className="flex-1 ml-2">
@@ -39,7 +39,7 @@ const TopTable: FC<IProps> = ({ columns }) => {
 
           {/* 查看更多 */}
           <dd className="mt-4">
-            <a className="text-sm text-#666 hover:text-#333 flex items-center">
+            <a className="text-sm text-#666 hover:text-#333 flex items-center cursor-pointer">
               查看全部
               <span className="ml-1 text-xs"> &gt; </span>
             </a>

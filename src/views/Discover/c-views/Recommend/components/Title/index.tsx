@@ -1,4 +1,5 @@
 import { memo, FC } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { TitleWrapper } from "./style";
 import Icon from "@/components/Icon";
@@ -6,10 +7,14 @@ import type { TitleProps as TitleType } from "@/types";
 
 interface TitleProps {
   title: string;
+  morePath: string;
   subTitle?: TitleType[];
 }
 
-export const Title: FC<TitleProps> = ({ title, subTitle }) => {
+export const Title: FC<TitleProps> = ({ title, subTitle,morePath }) => {
+  
+  const navigate = useNavigate();
+  
   return (
     <TitleWrapper>
       <div className="left pl-3 flex items-center">
@@ -24,7 +29,7 @@ export const Title: FC<TitleProps> = ({ title, subTitle }) => {
           </span>
         ))}
       </div>
-      <div className="flex items-center text-xs">
+      <div className="flex items-center text-xs" onClick={()=> {navigate(morePath)}}>
         <span className="mr-3 cursor-pointer">更多</span>
         <Icon name="right-1"></Icon>
       </div>

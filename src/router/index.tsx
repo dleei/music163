@@ -29,35 +29,41 @@ const routes: RouteObject[] = [
         index: true,
         element: <Navigate to="/discover/recommend" replace />,
       },
-      // 发现音乐（包含三级路由）
+      // 发现音乐（
       {
         path: "discover",
-        element: <Discover />,  // 这个组件需要包含二级导航和三级路由出口
+        element: <Discover />, 
         children: [
           {
             index: true,
             element: <Navigate to="recommend" replace />,
           },
+          /* 推荐 */
           {
             path: "recommend",
             element: <Recommend />,
           },
+          /* 排行榜 */
           {
             path: "ranking",
             element: <RankingList />,
           },
+          /* 歌单 */
           {
             path: "order",
             element: <SongsOrder />,
           },
+          /* 主播电台 */
           {
             path: "anchor",
             element: <AnchorDj />,
           },
+          /* 歌手 */
           {
             path: "singer",
             element: <Singer />,
           },
+          /* 新碟上架 */
           {
             path: "album",
             element: <Album />,
@@ -65,26 +71,32 @@ const routes: RouteObject[] = [
         ]
       },
       // 其他独立页面（二级路由）
+      /* 我的音乐 */
       {
         path: "mine",
         element: <Mine />,
       },
+      /* 关注 */
       {
         path: "focus",
         element: <Focus />,
       },
+      /* 商城 */
       {
         path: "mall",
         element: <Mall />,
       },
+      /* 音乐人 */
       {
         path: "musician",
         element: <Musician />,
       },
+      /* 云推歌 */
       {
         path: "cloud",
         element: <CloudDiscover />,
       },
+      /* 下载 */
       {
         path: "download",
         element: <Download />,

@@ -14,20 +14,6 @@ export interface AlbumParam {
   month?: number;
 }
 
-interface ArtistType {
-  id: number;
-  albumSize: number;
-  name: string;
-  picUrl: string;
-}
-
-export interface AlbumDataType {
-  areaId: number;
-  artist: ArtistType;
-  name: string;
-  picUrl: string;
-}
-
 export interface TableColumn {
   id: number;
   coverImgUrl: string;
@@ -36,4 +22,11 @@ export interface TableColumn {
     first: string;
     second: string;
   }[];
+}
+
+export interface AlbumDataType {
+  singer: string;
+  id: number;
+  name: string;
+  picUrl: string;
 }
