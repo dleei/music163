@@ -9,7 +9,7 @@ interface IProps {
 const AnchorDj: FC<IProps> = () => {
   return (
     <AnchorDjWrapper>
-      <div>主播电台</div>
+      <div className='common-width'>主播电台</div>
     </AnchorDjWrapper>
   );
 };

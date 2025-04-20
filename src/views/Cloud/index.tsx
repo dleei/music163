@@ -9,7 +9,7 @@ interface IProps {
 const CloudDiscover: FC<IProps> = () => {
   return (
     <CloudDiscoverWrapper>
-      <div>云推歌</div>
+      <div className='common-width'>云推歌</div>
     </CloudDiscoverWrapper>
   );
 };

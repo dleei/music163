@@ -9,7 +9,7 @@ interface IProps {
 const Download: FC<IProps> = () => {
   return (
     <DownloadWrapper>
-      <div>下载客户端</div>
+      <div className='common-width'>下载客户端</div>
     </DownloadWrapper>
   );
 };

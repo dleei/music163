@@ -9,7 +9,7 @@ interface IProps {
 const Album: FC<IProps> = () => {
   return (
     <AlbumWrapper>
-      <div>新碟上架</div>
+      <div className='common-width'>新碟上架</div>
     </AlbumWrapper>
   );
 };

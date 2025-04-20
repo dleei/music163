@@ -1,6 +1,6 @@
 import { memo } from "react";
 import type { FC, ReactNode } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import { NavWrapper } from "./style";
 
@@ -12,36 +12,47 @@ const Nav: FC<IProps> = () => {
   const links = [
     {
       name: "推荐",
-      path: "/discover",
+      path: "/discover/recommend",
+      end: true, // 设置为 true，表示精确匹配
     },
     {
       name: "排行榜",
       path: "/discover/ranking",
+      end: true,
     },
     {
       name: "歌单",
       path: "/discover/order",
+      end: true,
     },
     {
       name: "主播电台",
       path: "/discover/anchor",
+      end: true,
     },
     {
       name: "歌手",
       path: "/discover/singer",
+      end: true,
     },
     {
       name: "新碟上架",
       path: "/discover/album",
+      end: true,
     },
   ];
 
   return (
     <NavWrapper className="common-width m-center">
       {links.map((link, index) => (
-        <Link key={index} className="link" to={link.path}>
+        <NavLink
+          key={index}
+          to={link.path}
+          className={({ isActive }) => `link ${isActive ? "active" : ""}`}
+          end={link.end}
+        >
           {link.name}
-        </Link>
+        </NavLink>
       ))}
     </NavWrapper>
   );

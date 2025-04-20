@@ -10,7 +10,6 @@ interface IProps {
 }
 
 const Header: FC<IProps> = () => {
-  
   const navigate = useNavigate();
 
   const links = [
@@ -48,12 +47,12 @@ const Header: FC<IProps> = () => {
     <HeaderWrapper className=" common-width">
       <div className="flex justify-between h-full">
         <HeaderLeft className="flex">
-          <a className="logo-link" onClick={() => navigate("/")}>
-            <h1 className="logo">网易云音乐</h1>
+          <a onClick={() => navigate("/")}>
+            <div className="logo"></div>
           </a>
           {links.map((link) => (
             <div
-              className="link h-full px-5 flex items-center cursor-pointer"
+              className="text-[#ccc] h-full px-5 flex items-center cursor-pointer hover:bg-[#000] cursor-pointer"
               onClick={() => navigate(link.path)}
               key={link.name}
             >
@@ -63,8 +62,12 @@ const Header: FC<IProps> = () => {
         </HeaderLeft>
         <HeaderRight className="flex items-center">
           <Search />
-          <div className="creator">创作者中心</div>
-          <div className="login">登录</div>
+          <div className=" w-[90px] h-[28px] flex-center px-1 mx-3 text-xs cursor-pointer hover:border-[#fff] text-[#ccc] rounded-[14px] border-width-[1px] border-solid border-[#ccc]">
+            创作者中心
+          </div>
+          <div className=" text-xs text-[#787878] cursor-pointer hover:text-[#fff]">
+            登录
+          </div>
         </HeaderRight>
       </div>
     </HeaderWrapper>

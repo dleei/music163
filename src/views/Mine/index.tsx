@@ -9,7 +9,7 @@ interface IProps {
 const Mine: FC<IProps> = () => {
   return (
     <MineWrapper>
-      <div>我的</div>
+      <div className='common-width'>我的</div>
     </MineWrapper>
   );
 };

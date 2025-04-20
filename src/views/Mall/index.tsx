@@ -9,7 +9,7 @@ interface IProps {
 const Mall: FC<IProps> = () => {
   return (
     <MallWrapper>
-      <div>商城</div>
+      <div className='common-width'>商城</div>
     </MallWrapper>
   );
 };

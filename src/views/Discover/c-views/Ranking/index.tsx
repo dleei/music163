@@ -9,7 +9,7 @@ interface IProps {
 const RankingList: FC<IProps> = () => {
   return (
     <RankingListWrapper>
-      <div>排行榜</div>
+      <div className='common-width'>排行榜</div>
     </RankingListWrapper>
   );
 };

@@ -11,7 +11,7 @@ const RoutesComponent = () => {
 const App = () => {
   return (
     <Router>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div></div>}>
         <RoutesComponent />
       </Suspense>
     </Router>

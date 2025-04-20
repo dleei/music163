@@ -9,7 +9,7 @@ interface IProps {
 const Focus: FC<IProps> = () => {
   return (
     <FocusWrapper>
-      <div>关注</div>
+      <div className='common-width'>关注</div>
     </FocusWrapper>
   );
 };

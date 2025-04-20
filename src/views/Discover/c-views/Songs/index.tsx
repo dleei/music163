@@ -10,7 +10,7 @@ interface IProps {
 const SingerOrder: FC<IProps> = () => {
   return (
     <SongsOrderWrapper>
-      <div>歌单</div>
+      <div className="common-width">歌单</div>
     </SongsOrderWrapper>
   );
 };

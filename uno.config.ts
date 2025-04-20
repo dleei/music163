@@ -21,7 +21,7 @@ export default defineConfig({
     {
       "flex-center": "flex justify-center items-center",
       "flex-col": "flex flex-col",
-      "flex-col-center": "flex flex-col justify-center items-center",
+      "col-items-center": "flex flex-col items-center",
       "m-center": "my-0 mx-auto",
       ellipsis: "overflow-hidden whitespace-nowrap text-ellipsis",
       "ellipsis-2": "overflow-hidden line-clamp-2"
