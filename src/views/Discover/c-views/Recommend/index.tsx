@@ -15,13 +15,13 @@ interface IProps {
 
 const Recommend: FC<IProps> = () => {
   return (
-    <RecommendWrapper>
+    <RecommendWrapper >
       <div className="recommend  common-width">
         <Banner></Banner>
       </div>
-      <div className="common-width flex justify-between">
+      <div className="common-width flex justify-between bg-[#fff]">
         {/* 左侧区域 */}
-        <Left className="flex-1 py-5">
+        <Left className="flex-1 py-5 border-l-[#e9e9e9] border-l-1 border-l-solid">
           <div className="px-5">
             {/* 热门推荐 */}
             <HotRecommend></HotRecommend>
@@ -32,7 +32,7 @@ const Recommend: FC<IProps> = () => {
           </div>
         </Left>
         {/* 右侧区域 */}
-        <Right>
+        <Right className='border-l-[#e9e9e9] border-l-1 border-l-solid border-r-[#e9e9e9] border-r-1 border-r-solid'>
           <div className="w-[250px]">
             {/* 会员卡片及登录 */}
             <VipCard></VipCard>

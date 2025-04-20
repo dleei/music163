@@ -9,7 +9,7 @@ interface IProps {
 const Footer: FC<IProps> = () => {
   return (
     <FooterWrapper>
-      <div className="footer h-[260px] bg-[#f2f2f2] pt-[33px]">
+      <div className="footer h-[260px] bg-[#f2f2f2] pt-[33px] border-t-2 border-t-solid border-t-[#d3d3d3]">
         <div className="content m-center common-width">
           <div className=" flex justify-evenly">
             <div className=" col-items-center">

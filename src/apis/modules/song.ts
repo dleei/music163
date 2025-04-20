@@ -26,3 +26,9 @@ export const getNewAlbum = (params: AlbumParam) =>
  * 所有榜单内容摘要
  */
 export const getTopList = () => request.get("/api/toplist/detail");
+
+/**
+ * 音乐搜索
+ * @param keywords 搜索关键词
+ */
+export const searchSong = (keywords: string) => request.get('/api/search/multimatch', { params: { keywords } });
