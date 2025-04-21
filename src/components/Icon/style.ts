@@ -1,23 +1,19 @@
 import styled from 'styled-components';
+import { SVGProps } from 'react';
 
-// 定义 SVG 样式
-export const IconWrapper = styled.svg`
-  
-  aria-hidden: true;
+interface IconWrapperProps extends SVGProps<SVGSVGElement> {
+  size?: string;
+}
+
+const IconWrapper = styled.svg<IconWrapperProps>`
   width: ${({ size }) => size || '1.5rem'};
   height: ${({ size }) => size || '1.5rem'};
-  fill: ${({ color }) => color || 'currentColor'};
+  fill: ${({ color }) => color};
+  transition: transform 0.3s ease;
 
   &.rotate {
-    animation: rotate 1s linear infinite;
-  }
-  
-  @keyframes rotate {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+    transform: rotate(180deg);
   }
 `;
+
+export { IconWrapper };

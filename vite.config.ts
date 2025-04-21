@@ -21,8 +21,7 @@ export default ({ mode }: { mode: string }) => {
 
   return defineConfig({
     // 生产环境打包路径
-    base: ".",
-
+    base: "/",
     // 插件
     plugins: [
       Unocss(),
@@ -95,6 +94,7 @@ export default ({ mode }: { mode: string }) => {
           drop_debugger: true, // 移除 debugger
         },
       },
+      reportCompressedSize: false, // 是否显示压缩后的文件大小
       sourcemap: false, // 如果不需要 source map，可以设置为 false，减少构建时间
       rollupOptions: {
         output: {

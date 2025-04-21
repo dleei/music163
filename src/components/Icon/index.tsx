@@ -20,10 +20,11 @@ const Icon: React.FC<IconProps> = ({
     <IconWrapper
       className={`icon ${rotate ? "rotate" : ""}`}
       style={{ fontSize: size, cursor: "pointer" }}
+      size={size} // 传递 size 属性
       color={color}
-      onClick={onClick} // 新增：绑定点击事件
-      role={onClick ? "button" : undefined} // 可选：提升可访问性
-      tabIndex={onClick ? 0 : undefined} // 可选：支持键盘聚焦
+      onClick={onClick} 
+      role={onClick ? "button" : undefined} 
+      tabIndex={onClick ? 0 : undefined}
     >
       <use xlinkHref={`#icon-${name}`} />
     </IconWrapper>
@@ -31,3 +32,5 @@ const Icon: React.FC<IconProps> = ({
 };
 
 export default Icon;
+
+

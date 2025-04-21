@@ -1,11 +1,11 @@
 import { create } from "zustand";
-import type { User } from "@/types";
+import type { UserState } from '@/types';
 
-export const useUserStore = create((set) => ({
-  user: {
-    id: 1,
-    name: "John Doe",
-  },
-  setUser: (user: User) => set({ user }),
-  clearUser: () => set({ user: null }),
+export const useUserStore = create<UserState>((set) => ({
+  email: "",
+  password: "",
+
+  setEmail: (email: string | number) => set(() => ({ email })),
+  setPassword: (password: string | number) => set(() => ({ password })),
+  
 }));

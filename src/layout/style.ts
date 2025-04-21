@@ -15,6 +15,17 @@ const LayoutWrapper = styled.div`
       font-size: 12px;
     }
   }
+  .arco-backtop {
+    bottom: 150px;
+    right: 170px;
+    & .arco-backtop-button {
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+      background-color: #f5f5f5;
+      border: 1px solid #d9d9d9;
+    }
+  }
 `;
 
 export default LayoutWrapper;

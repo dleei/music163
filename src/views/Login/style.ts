@@ -1,7 +1,3 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const  LoginWrapper = styled.div`
- .title {
-  color: red;
- }
-`
+export const LoginWrapper = styled.div``;
