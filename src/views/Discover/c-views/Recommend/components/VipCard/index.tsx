@@ -1,13 +1,19 @@
-import { memo } from "react";
+import { memo,useState } from "react";
 import type { FC, ReactNode } from "react";
 
 import VipCardWrapper from "./style";
+import Modal from '@/components/Modal';
 
 interface IProps {
   children?: ReactNode;
 }
 
 const VipCard: FC<IProps> = () => {
+  
+  const [showLogin, setShowLogin] = useState(false);
+
+  const onLogin = () => setShowLogin(true);
+  
   return (
     <VipCardWrapper>
       <div className="bg-gradient-to-t from-#e1e1e1 to-#fff pb-4">
@@ -18,10 +24,11 @@ const VipCard: FC<IProps> = () => {
         <div className="py-4 mx-4 text-xs text-#666">
           登录网易云音乐，可以享受无限收藏的乐趣，并且无限同步到手机
         </div>
-        <div className="w-[100px] h-[31px] mx-auto bg-#C90C13 color-#fff flex-center hover:bg-#E12128 rounded-sm cursor-pointer">
+        <div className="w-[100px] h-[31px] mx-auto bg-#C90C13 color-#fff flex-center hover:bg-#E12128 rounded-sm cursor-pointer" onClick={onLogin}>
           用户登录
         </div>
       </div>
+      {showLogin && <Modal onClose={() => setShowLogin(false)} />}
     </VipCardWrapper>
   );
 };

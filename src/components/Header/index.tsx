@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import { HeaderWrapper, HeaderLeft, HeaderRight } from "./style";
 import Search from "@/components/Search";
+import Modal from "../Modal";
 
 interface IProps {
   children?: ReactNode;
@@ -46,9 +47,7 @@ const Header: FC<IProps> = () => {
 
   const [showLogin, setShowLogin] = useState(false);
 
-  const onLogin = () => {
-    setShowLogin(true);
-  };
+  const onLogin = () => setShowLogin(true);
 
   return (
     <HeaderWrapper className=" common-width">
@@ -80,6 +79,7 @@ const Header: FC<IProps> = () => {
           </div>
         </HeaderRight>
       </div>
+      {showLogin && <Modal onClose={() => setShowLogin(false)} />}
     </HeaderWrapper>
   );
 };

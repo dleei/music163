@@ -1,14 +1,22 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import { rgba } from "polished";
 
-const ModalWrapper = styled.div`
+ const ModalWrapper = styled.div`
   .mask {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: ${rgba('#000', 0.5)};
     z-index: 999;
+  }
+  .title {
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .content {
+    color: #333;
   }
 
   .modal-content {
@@ -16,28 +24,13 @@ const ModalWrapper = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: white;
-    padding: 20px;
+    background: #fff;
     border-radius: 8px;
+    min-width: 320px;
     z-index: 1000;
-    min-width: 400px;
-
-    .title {
-      font-size: 20px;
-      margin-bottom: 15px;
-      
-      .close-icon {
-        cursor: pointer;
-        &:hover {
-          color: #666;
-        }
-      }
-    }
-
-    .content {
-      padding: 15px 0;
-    }
+    box-shadow: 0 4px 12px ${rgba('#000', 0.15)};
   }
+
 `;
 
 export default ModalWrapper;
